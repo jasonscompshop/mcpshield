@@ -1,0 +1,19 @@
+{
+  "name": "mcpshield",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Security scanner for npm packages and MCP servers",
+  "bin": {
+    "mcpshield": "./src/index.js"
+  },
+  "scripts": {
+    "test": "node --test test/unit/*.test.js test/integration/*.test.js",
+    "test:unit": "node --test test/unit/*.test.js",
+    "test:integration": "node --test test/integration/*.test.js"
+  },
+  "keywords": ["security", "scanner", "mcp", "npm", "vulnerability"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
