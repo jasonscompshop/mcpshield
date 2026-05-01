@@ -1,42 +1,30 @@
-markdown
 # 🛡️ MCP Shield
 
-Security scanner for MCP servers - detects vulnerabilities, secrets, and malicious code before you add them to Claude.
+security scanner for npm packages and MCP servers
 
-## Quick Start
+| Scanner | What it detects |
+|---------|----------------|
+| secrets | Hardcoded keys, tokens, passwords |
+| network | Network calls, domain trust scoring |
+| filesystem | Sensitive file reads (etc/passwd, .env, etc.) |
+| child-process | exec/spawn calls |
+| install-scripts | preinstall/postinstall scripts |
+| dependency-depth | Number of dependencies |
+| base64 | Encoded base64 strings (decodes and scans) |
+| obfuscation | Minified/obfuscated code |
+| network-chaining | Fetch/request chains |
+| dependency-tree | Outdated dependencies |
+| suspicious-updates | Version jumps |
+| cross-package | Suspicious domains across packages |
+| reputation | Downloads/age/maintainer scoring |
+| threat-intel | Known malicious packages |
+| ast-analysis | eval(), prototype pollution |
+| license | License compliance |
+| typosquatting | Lookalike package names |
+| time-bomb | Date-based malicious conditions |
+| environment | Environment variable harvesting |
 
-```bash
-git clone https://github.com/jasonscompshop/mcpshield.git
-cd mcpshield
-node src/index.js scan express
-Usage
-bash
-node src/index.js scan express
-node src/index.js scan @anthropic/mcp-server-sqlite
-node src/index.js scan .
-node src/index.js --help
-Make it a command
-bash
-echo 'alias mcpshield="node ~/mcpshield/src/index.js"' >> ~/.zshrc
-source ~/.zshrc
-mcpshield scan express
-Example Output
-text
-🛡️ MCP SHIELD SECURITY REPORT
-═══════════════════════════════════════════
-📦 express@4.18.1
-✅ No security issues detected
-📊 SAFETY SCORE: 100/100
-✅ STATUS: SAFE
-What It Detects
-🔑 Hardcoded API keys | 🌐 Suspicious network calls | 📁 Sensitive file access | ⚙️ Dangerous child processes | 📦 Known vulnerabilities | 🕵️ Obfuscated code | 🎭 Typosquatting
+## 📦 Installation
 
-Requirements
-Node.js 18+
-
-License
-MIT
-
-text
-
-That's it. One block. Copy. Paste. Commit.
+Download binary
+Download from [Releases](https://github.com/jasonscompshop/mcpshield/releases)
